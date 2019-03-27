@@ -1,0 +1,59 @@
+{
+  "name": "nest-typescript-starter",
+  "version": "1.0.0",
+  "description": "Nest TypeScript starter repository",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha",
+    "cov": "nyc mocha",
+    "cov:html": "yarn cov && nyc report --reporter=html",
+    "test:watch": "mocha -w --reporter min"
+  },
+  "dependencies": {
+    "@kubernetes/typescript-node": "https://cdn.rawgit.com/Kamshak/packages/c561cad6/kubernetes-typescript-node-v0.2.1.tgz",
+    "bluebird-retry": "^0.11.0",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.18",
+    "@types/chai": "^4.0.4",
+    "@types/chai-as-promised": "^0.0.31",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.0.53",
+    "@types/request-promise-native": "^1.0.10",
+    "@types/sinon": "^2.3.3",
+    "@types/sinon-chai": "^2.7.29",
+    "chai": "^4.1.1",
+    "chai-as-promised": "^7.1.1",
+    "child-process-promise": "^2.2.1",
+    "mocha": "^3.5.0",
+    "nyc": "^11.1.0",
+    "sinon": "^3.2.1",
+    "sinon-chai": "^2.13.0",
+    "ts-node": "^3.3.0",
+    "typescript": "^3.3.4000"
+  },
+  "nyc": {
+    "require": [
+      "ts-node/register"
+    ],
+    "exclude": [
+      "**/*.spec.js",
+      "build"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "sourceMap": true,
+    "instrument": true
+  }
+}
