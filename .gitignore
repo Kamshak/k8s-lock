@@ -20,4 +20,6 @@ npm-debug.log
 # dist
 /dist
 
-.env
+.env.idea/
+tests/.vagrant/
+dind-cluster-*.sh
