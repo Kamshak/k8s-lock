@@ -7,7 +7,6 @@ env:
 
 install:
   - tests/k8s-euft/helm.sh local_install || exit 1
-  - bats tests/k8s-euft/helm_lint.bats || exit 1
   - tests/k8s-euft/bootstrap_k8s.sh || exit 1
   - tests/k8s-euft/helm.sh install || exit 1
 
